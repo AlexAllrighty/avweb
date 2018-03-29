@@ -1,0 +1,375 @@
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title--portfolio {
+  position: relative;
+  font-size: 36px;
+  width: 100%;
+}
+
+.notice {
+  position: absolute;
+  font-size: 14px;
+  color: $base-color;
+  top: 0px;
+}
+
+.portfolio__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+
+.portfolio__item {
+  border: 1px solid #ececec;
+  min-height: 460px;
+  width: 400px;
+  margin-bottom: 50px;
+  &:hover  {
+   border: 1px solid $base-color;
+  }
+  &:hover .portfolio__preview {
+    border-bottom: 1px solid $base-color;
+  }
+  &:hover .portfolio__item-title {
+    color: $base-color;
+    text-decoration: underline;
+  }
+}
+
+.portfolio__preview {
+  height: 400px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+  transition: border-bottom 0.5s ease-out;
+  img {
+    width: 100%;
+    transition: transform 0.1s ease-out;
+
+  }
+}
+
+.portfolio__item-info {
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.portfolio__item-title {
+  font-size: 14px;
+  line-height: 26px;
+  transition: color 0.5s ease-out;
+}
+
+.toggle-description, .label-description {
+  display: none;
+}
+
+.portfolio__modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 900px;
+  height: 600px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px 0px grey;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+}
+
+@keyframes bounce {
+  0% { transform: translate(-50%, -1000px);
+        top: -30%;}
+
+  100% { transform: translate(-50%, -50%);
+         top: 50%;}
+}
+
+.modal__pictures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.pictures__first-picture {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid black;
+   img {
+     width: 100%;
+   }
+ }
+
+.pictures__second-picture {
+  width: 70%;
+  height: 50%;
+  overflow: hidden;
+  border: 1px solid black;
+  img {
+    width: 100%;
+  }
+}
+
+.portfolio__modal--keksobooking {
+  .pictures__first-picture {
+    img {
+      height: 100%;
+    }
+  }
+  .pictures__second-picture {
+    margin: 0 auto;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.pictures__third-picture {
+  width: 28%;
+  height: 50%;
+  overflow: hidden;
+  border: 1px solid black;
+  img {
+    width: 100%;
+  }
+}
+
+.modal__description {
+  margin-left: 40px;
+  max-width: 40%;
+}
+
+.modal__title {
+  font-size: 14px;
+}
+
+.modal__text {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.stack {
+  font-size: 14px;
+}
+
+.modal__stack-list {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+.modal__stack-item {
+  font-size: 14px;
+  position: relative;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: $base-color;
+
+  }
+}
+
+.modal__link {
+  margin-right: 20px;
+  border-bottom: 1px solid $base-color;
+  padding-bottom: 4px;
+  &:hover, &:focus {
+    outline: none;
+    color: $base-color;
+    border-color: transparent;
+  }
+}
+
+.cross {
+  display: block;
+  position: relative;
+  left: 94%;
+  width: 18px;
+  height: 18px;
+  &:after {
+    position: absolute;
+    left: 8px;
+    top: -1px;
+    display: block;
+    content: "";
+    width: 3px;
+    height: 20px;
+    background-color: black;
+    transform: rotate(45deg);
+  }
+  &:before {
+    position: absolute;
+    left: 8px;
+    top: -1px;
+    display: block;
+    content: "";
+    width: 3px;
+    height: 20px;
+    background-color: black;
+    transform: rotate(-45deg);
+  }
+
+  &:hover  {
+    &:after, &:before {
+      background-color: $base-color;
+      transition: background-color 0.5s ease-out;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .portfolio__item {
+    margin-right: 5px;
+    width: 48%;
+  }
+  .portfolio__modal {
+    width: 90%;
+  }
+
+  .portfolio__modal--keksobooking {
+    .pictures__second-picture {
+      width: 100%;
+    }
+  }
+  .modal__link {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (max-width: $mobile-widths) {
+  .title--portfolio {
+    margin-bottom: 5px;
+  }
+
+  .notice {
+    font-size: 12px;
+  }
+
+  .hidden {
+    display: flex;
+  }
+  .portfolio__item {
+    display: none;
+  }
+
+  .toggle-description, .label-description {
+    display: block;
+  }
+
+  .toggle-description {
+    display: none;
+  }
+
+  .toggle-description--mishka:checked ~ .stack,
+  .toggle-description--mishka:checked ~ .modal__stack-list,
+  .toggle-description--mishka:checked ~ .modal__text,
+  .toggle-description--mishka:checked {
+    display: none;
+  }
+
+  .toggle-description--keksobooking:checked ~ .stack,
+  .toggle-description--keksobooking:checked ~ .modal__stack-list,
+  .toggle-description--keksobooking:checked ~ .modal__text {
+    display: none;
+  }
+
+  .portfolio__modal {
+    position: static;
+    flex-wrap: wrap;
+    transform: none;
+    animation: none;
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border: 2px solid #ececec;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .modal__pictures {
+    width: 100%;
+    order: 1;
+  }
+
+  .portfolio__modal--mishka {
+    .pictures__first-picture {
+      height: 330px;
+    }
+    .pictures__second-picture {
+      display: none;
+    }
+    .pictures__third-picture {
+      display: none;
+    }
+  }
+
+  .portfolio__modal--keksobooking {
+    .pictures__first-picture {
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+    .pictures__second-picture {
+      display: none;
+    }
+  }
+
+  .label-description {
+    width: 140px;
+    color: $base-color;
+    border-bottom: 1px solid $base-color;
+    margin-bottom: 15px;
+  }
+
+  .modal__description {
+    order: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .modal__title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cross {
+    display: none;
+  }
+
+  .modal__link {
+    margin-top: 40px;
+  }
+}

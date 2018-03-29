@@ -1,0 +1,9 @@
+@mixin container {
+  width: 1160px;
+  margin: 0 auto;
+  padding: 0px 10px;
+  @media (max-width: $tablet-widths) {
+    width: 95%;
+    padding: 0 5px;
+  }
+}

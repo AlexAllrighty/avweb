@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease-out, border-color 0.3s ease-out;
+  &:focus {
+    outline: none;
+    color: crimson;
+  }
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.5s ease-out;
+}
+
+svg {
+  transition: fill 0.5s ease-out;
+}
+
+input, textarea {
+  transition: border 0.3s ease-out;
+}
+
+.point {
+  position: relative;
+  top: 1px;
+  color: crimson;
+  font-size: 40px;
+  &--header {
+    font-size: 60px;
+  }
+}
+
+
+

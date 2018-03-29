@@ -1,0 +1,41 @@
+.page-footer {
+  border-top: 2px solid #ececec;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .page-main__wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.footer__contacts {
+  display: flex;
+}
+
+.footer__item {
+  margin-left: 20px;
+  font-size: 10px;
+  color: grey;
+}
+
+@media (max-width: $mobile-widths) {
+  .page-footer {
+    padding-top: 10px;
+  }
+
+  .footer__contacts {
+    width: 50%;
+    flex-direction: column;
+  }
+
+  .footer__item {
+    width: 100%;
+    margin-left: 0;
+    font-size: 8px;
+  }
+
+  .footer__social {
+    margin-top: 20px;
+  }
+}
+
